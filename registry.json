@@ -1,0 +1,30 @@
+
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "0ui",
+  "homepage": "https://github.com/orielhaim/0ui",
+  "items": [
+    {
+      "name": "navbar",
+      "type": "registry:ui",
+      "title": "Navbar",
+      "description": "A scroll-aware navbar with motion menus. Set resizable to false to keep the bar full width.",
+      "dependencies": ["motion", "class-variance-authority", "lucide-react"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/navbar.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/nav-menu.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/highlight.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}
