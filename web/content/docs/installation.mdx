@@ -1,0 +1,28 @@
+---
+title: Installation
+description: Install 0ui components directly into your React project with the shadcn CLI.
+---
+
+## Prepare your project
+
+0ui components use React and Tailwind CSS v4. Initialize shadcn in your app if you have not already:
+
+```sh
+bunx shadcn init
+```
+
+Follow the prompts for your framework, stylesheet, and aliases. See the [official shadcn installation guide](https://ui.shadcn.com/docs/installation) for framework-specific setup.
+
+## Choose a component
+
+Open the [component gallery](/components) and pick a component. Its documentation page includes an installation command for the GitHub registry. The CLI copies the original files into your configured UI directory and installs their dependencies.
+
+## Use the installed source
+
+Copy an example from the component page. Replace the example's `@registry/ui/` import with the UI alias configured in your `components.json`, usually `@/components/ui/`.
+
+The components belong to your project. Edit their classes, types, and behavior directly. Updates are an explicit choice through the shadcn CLI, so your local changes remain under your control.
+
+## Preview in context
+
+Navbar examples have their own scrolling viewport. Use the desktop, tablet, and mobile controls to test layout changes. Open the dropdown example to try keyboard navigation and the mobile menu. The Code view displays the exact file executed by the preview.

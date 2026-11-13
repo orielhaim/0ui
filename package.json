@@ -1,0 +1,27 @@
+{
+  "name": "0ui-workspace",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "web"
+  ],
+  "scripts": {
+    "dev": "bun run --filter @0ui/web dev",
+    "build": "bun run --filter @0ui/web build",
+    "typecheck": "bun run --filter @0ui/web types:check",
+    "lint": "bun run --filter @0ui/web lint"
+  },
+  "devDependencies": {
+    "@shadcn/registry": "0.2.1",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "class-variance-authority": "^0.7.1",
+    "cn": "^0.5.2",
+    "lucide-react": "^1.72.0",
+    "motion": "^14.13.0",
+    "react": "19.3.1",
+    "react-docgen-typescript": "2.4.0",
+    "react-dom": "19.3.1",
+    "typescript": "5.9.3"
+  }
+}

@@ -1,0 +1,14 @@
+node_modules
+
+.DS_Store
+.cache
+.vercel
+.output
+.nitro
+/build/
+/api/
+/server/build
+/public/build
+.tanstack
+
+.source

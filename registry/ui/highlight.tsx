@@ -3,7 +3,7 @@
 import * as React from "react";
 import { AnimatePresence, Transition, motion } from "motion/react";
 
-import { cn } from "@/lib/utils";
+import { cn } from "cn";
 
 type HighlightMode = "children" | "parent";
 
@@ -455,7 +455,6 @@ function HighlightItem({
 
   const dataAttributes = {
     "data-active": isActive ? "true" : "false",
-    "aria-selected": isActive,
     "data-disabled": isDisabled,
     "data-value": childValue,
     "data-highlight": true,

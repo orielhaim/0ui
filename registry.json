@@ -1,4 +1,3 @@
-
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "0ui",
@@ -9,8 +8,12 @@
       "type": "registry:ui",
       "title": "Navbar",
       "description": "A scroll-aware navbar with motion menus. Set resizable to false to keep the bar full width.",
-      "dependencies": ["motion", "class-variance-authority", "lucide-react"],
-      "registryDependencies": ["utils"],
+      "dependencies": [
+        "motion",
+        "class-variance-authority",
+        "lucide-react",
+        "cn"
+      ],
       "files": [
         {
           "path": "registry/ui/navbar.tsx",
@@ -24,7 +27,12 @@
           "path": "registry/ui/highlight.tsx",
           "type": "registry:ui"
         }
-      ]
+      ],
+      "categories": ["Navigation"],
+      "meta": {
+        "featured": true,
+        "status": "New"
+      }
     }
   ]
 }

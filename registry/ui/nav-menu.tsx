@@ -5,7 +5,7 @@ import { cva } from "class-variance-authority";
 import { AnimatePresence, motion } from "motion/react";
 import { ChevronDownIcon } from "lucide-react";
 
-import { cn } from "@/lib/utils";
+import { cn } from "cn";
 import { Highlight, HighlightItem } from "./highlight";
 
 type Spring = {

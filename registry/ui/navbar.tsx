@@ -10,7 +10,7 @@ import {
 } from "motion/react";
 import { ChevronDown, Menu, X } from "lucide-react";
 
-import { cn } from "@/lib/utils";
+import { cn } from "cn";
 import {
   MotionNavigationMenu,
   MotionNavigationMenuContent,
@@ -18,7 +18,7 @@ import {
   MotionNavigationMenuLink,
   MotionNavigationMenuList,
   MotionNavigationMenuTrigger,
-} from "./motion-navigation-menu";
+} from "./nav-menu";
 
 const spring = { type: "spring" as const, stiffness: 240, damping: 28 };
 const panelTransition = { duration: 0.24, ease: [0.22, 1, 0.36, 1] as const };
