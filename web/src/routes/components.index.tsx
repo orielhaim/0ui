@@ -24,16 +24,8 @@ export const Route = createFileRoute('/components/')({
       <HomeLayout {...baseOptions()}>
         <div id="main-content" className="site-container gallery-page">
           <div className="page-intro">
-            <h1>
-              Find your next
-              <br />
-              <span>building block.</span>
-            </h1>
-            <p>
-              Thoughtful defaults. Details that move.
-              <br />
-              React components ready to make your own.
-            </p>
+            <h1>Components</h1>
+            <p>Preview, customize, and make them yours.</p>
           </div>
           <ComponentGallery key={category} initialCategory={category} />
           <footer className="site-footer">

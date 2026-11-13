@@ -88,12 +88,6 @@ export function ComponentGallery({
                 </h2>
                 <p>{item.description}</p>
               </div>
-              {item.meta?.featured === true && (
-                <span className="badge">Featured</span>
-              )}
-            </div>
-            <div className="gallery-categories">
-              {item.categories?.join(' / ')}
             </div>
           </article>
         ))}

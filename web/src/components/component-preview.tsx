@@ -175,19 +175,21 @@ export function ComponentPreview({
                 </button>
               ))}
             </div>
-            <button
-              className="icon-button"
-              aria-label="Toggle preview background"
-              disabled={Boolean(config.background)}
-              title={
-                config.background
-                  ? `This example requires a ${config.background} background`
-                  : 'Toggle preview background'
-              }
-              onClick={() => setDark(!dark)}
-            >
-              {dark ? <Sun size={16} /> : <Moon size={16} />}
-            </button>
+            {!config.background && (
+              <button
+                className="icon-button"
+                aria-label="Toggle preview background"
+                disabled={Boolean(config.background)}
+                title={
+                  config.background
+                    ? `This example requires a ${config.background} background`
+                    : 'Toggle preview background'
+                }
+                onClick={() => setDark(!dark)}
+              >
+                {dark ? <Sun size={16} /> : <Moon size={16} />}
+              </button>
+            )}
             <button
               className="icon-button"
               aria-label="Reset preview"
@@ -208,7 +210,9 @@ export function ComponentPreview({
             <CopyButton value={loaded?.code ?? ''} />
           </div>
           {ready ? (
-            <pre><code>{loaded.code}</code></pre>
+            <pre>
+              <code>{loaded.code}</code>
+            </pre>
           ) : (
             <p className="p-8">Loading source…</p>
           )}
@@ -245,55 +249,53 @@ export function ComponentPreview({
           </div>
         </div>
       )}
-      {!compact && ready && (
-        <div className="preview-caption">
-          <p>{config.description ?? config.title ?? example.id}</p>
-          {Object.keys(config.controls ?? {}).length > 0 && (
-            <div className="prop-controls">
-              {Object.entries(config.controls ?? {}).map(([name, control]) => (
-                <label key={name}>
-                  <span>{control.label}</span>
-                  {control.type === 'boolean' ? (
-                    <input
-                      type="checkbox"
-                      checked={values[name] === true}
-                      onChange={(event) =>
-                        setValues({ ...values, [name]: event.target.checked })
-                      }
-                    />
-                  ) : control.type === 'select' ? (
-                    <select
-                      value={String(values[name])}
-                      onChange={(event) =>
-                        setValues({ ...values, [name]: event.target.value })
-                      }
-                    >
-                      {control.options.map((value) => (
-                        <option key={value}>{value}</option>
-                      ))}
-                    </select>
-                  ) : (
-                    <input
-                      type={control.type}
-                      min={control.type === 'number' ? control.min : undefined}
-                      max={control.type === 'number' ? control.max : undefined}
-                      value={String(values[name] ?? '')}
-                      onChange={(event) =>
-                        setValues({
-                          ...values,
-                          [name]:
-                            control.type === 'number'
-                              ? Number(event.target.value)
-                              : event.target.value,
-                        })
-                      }
-                    />
-                  )}
-                </label>
-              ))}
-            </div>
-          )}
-        </div>
+      {!compact && ready && Object.keys(config.controls ?? {}).length > 0 && (
+        <details className="preview-caption">
+          <summary>Customize</summary>
+          <div className="prop-controls">
+            {Object.entries(config.controls ?? {}).map(([name, control]) => (
+              <label key={name}>
+                <span>{control.label}</span>
+                {control.type === 'boolean' ? (
+                  <input
+                    type="checkbox"
+                    checked={values[name] === true}
+                    onChange={(event) =>
+                      setValues({ ...values, [name]: event.target.checked })
+                    }
+                  />
+                ) : control.type === 'select' ? (
+                  <select
+                    value={String(values[name])}
+                    onChange={(event) =>
+                      setValues({ ...values, [name]: event.target.value })
+                    }
+                  >
+                    {control.options.map((value) => (
+                      <option key={value}>{value}</option>
+                    ))}
+                  </select>
+                ) : (
+                  <input
+                    type={control.type}
+                    min={control.type === 'number' ? control.min : undefined}
+                    max={control.type === 'number' ? control.max : undefined}
+                    value={String(values[name] ?? '')}
+                    onChange={(event) =>
+                      setValues({
+                        ...values,
+                        [name]:
+                          control.type === 'number'
+                            ? Number(event.target.value)
+                            : event.target.value,
+                      })
+                    }
+                  />
+                )}
+              </label>
+            ))}
+          </div>
+        </details>
       )}
     </div>
   );

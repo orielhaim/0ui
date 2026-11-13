@@ -54,20 +54,6 @@ function ComponentPage() {
       <DocsPage full className="max-w-none" tableOfContent={{ enabled: false }}>
         <div className="component-heading">
           <div>
-            <div className="badges">
-              {item.categories?.map((category) => (
-                <a
-                  key={category}
-                  href={`/components?category=${encodeURIComponent(category)}`}
-                  className="badge"
-                >
-                  {category}
-                </a>
-              ))}
-              {typeof item.meta?.status === 'string' && (
-                <span className="badge badge-accent">{item.meta.status}</span>
-              )}
-            </div>
             <DocsTitle>{title(item)}</DocsTitle>
             <DocsDescription>{item.description}</DocsDescription>
           </div>
@@ -77,7 +63,7 @@ function ComponentPage() {
             target="_blank"
             rel="noreferrer"
           >
-            View on GitHub <ArrowUpRight size={14} />
+            Source <ArrowUpRight size={14} />
           </a>
         </div>
         <ComponentPreview key={item.name} name={item.name} />
